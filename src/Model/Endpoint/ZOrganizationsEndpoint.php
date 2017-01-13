@@ -1,10 +1,10 @@
 <?php
 
-namespace ZInvoice\Model\Endpoint;
+namespace 3xw\Zinvoice\Model\Endpoint;
 
 use Muffin\Webservice\Model\Endpoint;
 
-class ZOrganizationsEndpoint extends Endpoint
+class ZorganizationsEndpoint extends Endpoint
 {
 
 }

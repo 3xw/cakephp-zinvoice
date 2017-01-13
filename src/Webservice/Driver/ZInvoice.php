@@ -1,11 +1,11 @@
 <?php
 
-namespace ZInvoice\Webservice\Driver;
+namespace 3xw\Zinvoice\Webservice\Driver;
 
 use Cake\Network\Http\Client;
 use Muffin\Webservice\AbstractDriver;
 
-class ZInvoice extends AbstractDriver
+class Zinvoice extends AbstractDriver
 {
 
   /**

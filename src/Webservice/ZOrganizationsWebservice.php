@@ -1,13 +1,13 @@
 <?php
 
-namespace ZInvoice\Webservice;
+namespace 3xw\Zinvoice\Webservice;
 
 use Cake\Core\Configure;
 use Cake\Network\Http\Client;
 use Muffin\Webservice\Query;
 use Muffin\Webservice\Webservice\Webservice;
 
-class ArticlesWebservice extends Webservice
+class ZorganizationsWebservice extends Webservice
 {
 
     /**

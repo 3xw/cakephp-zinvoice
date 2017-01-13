@@ -1,10 +1,10 @@
 <?php
 
-namespace ZInvoice\Model\Resource;
+namespace 3xw\Zinvoice\Model\Resource;
 
 use Muffin\Webservice\Model\Resource;
 
-class ZOrganization extends Resource
+class Zorganization extends Resource
 {
 
 }

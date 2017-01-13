@@ -4,7 +4,7 @@ use Cake\Routing\Router;
 use Cake\Routing\Route\DashedRoute;
 
 Router::plugin(
-    'ZInvoice',
+    '3xw\Zinvoice',
     ['path' => '/zinvoice'],
     function (RouteBuilder $routes) {
         $routes->fallbacks(DashedRoute::class);

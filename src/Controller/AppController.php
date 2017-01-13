@@ -1,6 +1,6 @@
 <?php
 
-namespace ZInvoice\Controller;
+namespace 3xw\Zinvoice\Controller;
 
 use App\Controller\AppController as BaseController;
 

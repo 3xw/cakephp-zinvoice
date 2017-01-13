@@ -15,7 +15,9 @@ class ZorganizationsWebservice extends Webservice
      */
     protected function _executeReadQuery(Query $query, array $options = [])
     {
-        $response = $this->driver()->client()->get('/organizations',['authtoken' => Configure::read('Webservices.z_invoice.authtoken')]);
+        $response = $this->driver()->client()->get('/api/v3/organizations',['authtoken' => Configure::read('Api.zinvoice.authtoken')]);
+        debug($response->body());
+        debug(Configure::read('Api.zoho.authtoken'));
 
         if (!$response->isOk()) {
             return false;

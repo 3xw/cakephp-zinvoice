@@ -1,6 +1,6 @@
 <?php
 
-namespace 3xw\Zinvoice\Model\Resource;
+namespace Trois\Zinvoice\Model\Resource;
 
 use Muffin\Webservice\Model\Resource;
 

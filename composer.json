@@ -12,12 +12,12 @@
   },
   "autoload": {
     "psr-4": {
-      "3xw\\Zinvoice\\": "src"
+      "Trois\\Zinvoice\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "3xw\\Zinvoice\\Test\\": "tests",
+      "Trois\\Zinvoice\\Test\\": "tests",
       "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
     }
   }

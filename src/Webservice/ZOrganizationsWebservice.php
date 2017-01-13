@@ -1,6 +1,6 @@
 <?php
 
-namespace 3xw\Zinvoice\Webservice;
+namespace Trois\Zinvoice\Webservice;
 
 use Cake\Core\Configure;
 use Cake\Network\Http\Client;

@@ -1,6 +1,6 @@
 <?php
 
-namespace 3xw\Zinvoice\Model\Endpoint;
+namespace Trois\Zinvoice\Model\Endpoint;
 
 use Muffin\Webservice\Model\Endpoint;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace 3xw\Zinvoice\Webservice\Driver;
+namespace Trois\Zinvoice\Webservice\Driver;
 
 use Cake\Network\Http\Client;
 use Muffin\Webservice\AbstractDriver;

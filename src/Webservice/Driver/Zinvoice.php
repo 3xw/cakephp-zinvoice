@@ -13,6 +13,7 @@ class Zinvoice extends AbstractDriver
   */
   public function initialize()
   {
+
     $this->client(new Client([
       'host' => 'invoice.zoho.com',
       'scheme' => 'https',

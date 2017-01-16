@@ -25,6 +25,7 @@ abstract class Webservice extends BasWebservice
   public function initialize()
   {
     $this->_settings['globalQueries']['authtoken'] = $this->driver()->config('authtoken');
+    $this->_settings['globalQueries']['organization_id'] = $this->driver()->config('organization_id');
   }
 
   protected function _getSettings($queryType)
@@ -42,16 +43,71 @@ abstract class Webservice extends BasWebservice
     return [$endpoint, $params];
   }
 
+  protected function _executeDeleteQuery(Query $query, array $options = [])
+  {
+    // query settings
+    list($endpoint, $params) = $this->_getSettings('deleteQuery');
+
+    // query conditions
+    $conditions = $query->where();
+    if(empty($conditions))
+    {
+      throw new ZohoSettingsException(['Missing webservice id condition to call for '.$queryType]);
+    }
+    $schema = $query->endpoint()->schema();
+    foreach($conditions as $field => $condition)
+    {
+      if($schema->column($field))
+      {
+        if($schema->column($field)['primaryKey'])
+        {
+          // update settings
+          $endpoint .= '/'.$condition;
+        }
+      }
+    }
+
+    // request
+    $endpoint .= '?'.http_build_query($params);
+    $jData = json_encode($query->set());
+
+    // quering service
+    $response = $this->driver()->client()->delete($endpoint);
+    if (!$response->isOk()) {
+      throw new ZohoException([$response->code, $response->json['message'].' code '.$response->json['code']]);
+    }
+    return $response->json;
+  }
+
   /**
   * {@inheritDoc}
   */
   protected function _executeUpdateQuery(Query $query, array $options = [])
   {
-    debug($options);
-    debug($query);
-    /*
     // query settings
-    list($endpoint, $params) = $this->_getSettings('createQuery');
+    list($endpoint, $params) = $this->_getSettings('updateQuery');
+
+    // query conditions
+    $conditions = $query->where();
+    if(empty($conditions))
+    {
+      throw new ZohoSettingsException(['Missing webservice id condition to call for '.$queryType]);
+    }
+    $schema = $query->endpoint()->schema();
+    foreach($conditions as $field => $condition)
+    {
+      if($schema->column($field))
+      {
+        if($schema->column($field)['primaryKey'])
+        {
+          // update settings
+          $endpoint .= '/'.$condition;
+        }
+      }
+    }
+
+
+    // request
     $endpoint .= '?'.http_build_query($params);
     $jData = json_encode($query->set());
 
@@ -61,7 +117,6 @@ abstract class Webservice extends BasWebservice
       throw new ZohoException([$response->code, $response->json['message'].' code '.$response->json['code']]);
     }
     return $this->_transformResource($query->endpoint(), $response->json['contact']);
-    */
   }
 
   /**

@@ -11,7 +11,7 @@ class ContactSchema extends Schema
         parent::initialize();
         $this->addColumn('contact_id', [
             'type' => 'integer',
-            'primaryKey' => true
+            'primaryKey' => true,
         ]);
         $this->addColumn('contact_name', [
             'type' => 'string',

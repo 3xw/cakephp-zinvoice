@@ -1,5 +1,5 @@
 <?php
-namespace Trois\Zinvoice\Webservice\Exception;
+namespace Trois\Zinvoice\Exception;
 use Cake\Core\Exception\Exception;
 class ZohoException extends Exception
 {

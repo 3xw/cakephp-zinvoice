@@ -173,7 +173,13 @@ abstract class Webservice extends BasWebservice
             $listMode = false;
           }else
           {
-            $params[$field.'_contains'] = $condition;
+            if($schema->column($field)['type'] == 'integer')
+            {
+                $params[$field] = $condition;
+            }else
+            {
+              $params[$field.'_contains'] = $condition;
+            }
           }
         }
       }
